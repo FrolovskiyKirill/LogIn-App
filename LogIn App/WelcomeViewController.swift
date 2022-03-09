@@ -18,8 +18,4 @@ class WelcomeViewController: UIViewController {
         guard let userLabel = self.userLabel else { return }
         greetingLabel.text = "Hello, \(userLabel)!"
     }
-
-    @IBAction func logOutButton() {
-    }
-    
 }
