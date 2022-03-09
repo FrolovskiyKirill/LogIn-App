@@ -17,3 +17,14 @@ class ViewController: UIViewController {
 
 }
 
+// MARK: - Private Methods
+extension ViewController {
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) //{ _ in
+            //self.textField.text = ""
+        //}
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
