@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        
     }
     
     @IBAction func showUser() {
@@ -40,8 +39,7 @@ class ViewController: UIViewController {
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userTextField.text = ""
         passwordTextField.text = ""
-    }
-    
+    }    
 }
 
 // MARK: - Private Methods
