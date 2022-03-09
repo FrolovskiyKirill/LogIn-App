@@ -14,7 +14,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func showUser() {
+        showAlert(title: "Ooops", message: "Your User name is Alex")
+    }
+    @IBAction func showPassword() {
+        showAlert(title: "Ooops", message: "Your User password is 123")
+    }
+    
 }
 
 // MARK: - Private Methods
