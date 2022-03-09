@@ -9,11 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var userTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.userLabel = userTextField.text
+    }
+    
     @IBAction func showUser() {
         showAlert(title: "Ooops", message: "Your User name is Alex")
     }
@@ -21,6 +29,8 @@ class ViewController: UIViewController {
         showAlert(title: "Ooops", message: "Your User password is 123")
     }
     
+    @IBAction func logInPressed() {
+    }
 }
 
 // MARK: - Private Methods
