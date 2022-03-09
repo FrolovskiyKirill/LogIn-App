@@ -23,7 +23,6 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="gli-4B-IwQ"/>
-                                    <segue destination="Ge3-th-SxG" kind="show" id="Q9f-UT-1ib"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="orh-IX-uzD">
@@ -85,6 +84,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="DiH-9y-eYh" id="fxA-Fy-pMO"/>
                         <outlet property="userTextField" destination="sBd-vJ-oTD" id="QZr-ks-8hg"/>
+                        <segue destination="Ge3-th-SxG" kind="show" identifier="firstSegue" id="OVt-DB-hXg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,36 +106,36 @@
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOutButton" destination="Ge3-th-SxG" eventType="touchUpInside" id="Ke1-lA-4WT"/>
+                                    <segue destination="9MP-rq-fr1" kind="unwind" unwindAction="unwindFor:" id="BgT-0D-lcO"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MtQ-ah-vZP">
-                                <rect key="frame" x="178.66666666666666" y="84" width="71" height="199"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEs-Aw-ru7">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="97.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHY-Pc-ggj">
-                                        <rect key="frame" x="0.0" y="127.33333333333334" width="71" height="71.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEs-Aw-ru7">
+                                <rect key="frame" x="178.66666666666666" y="100" width="71" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="MtQ-ah-vZP" secondAttribute="height" multiplier="71:199" id="5Dz-Cj-LsY"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="368" id="RNo-Qy-P6n"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHY-Pc-ggj">
+                                <rect key="frame" x="181.66666666666666" y="208" width="65" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="seg-NS-Pms"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MtQ-ah-vZP" firstAttribute="centerX" secondItem="oMa-NN-d91" secondAttribute="centerX" id="3gX-bW-DEh"/>
+                            <constraint firstItem="qEs-Aw-ru7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="seg-NS-Pms" secondAttribute="leading" id="57P-gE-awb"/>
+                            <constraint firstItem="qEs-Aw-ru7" firstAttribute="centerX" secondItem="oMa-NN-d91" secondAttribute="centerX" id="Cfs-Sd-prz"/>
                             <constraint firstItem="3Xf-G3-5zD" firstAttribute="centerY" secondItem="oMa-NN-d91" secondAttribute="centerY" id="VWe-ze-mgR"/>
+                            <constraint firstItem="seg-NS-Pms" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qEs-Aw-ru7" secondAttribute="trailing" id="Vt5-E4-hG7"/>
+                            <constraint firstItem="qEs-Aw-ru7" firstAttribute="top" secondItem="seg-NS-Pms" secondAttribute="top" constant="56" id="XE2-ei-Yft"/>
+                            <constraint firstItem="fHY-Pc-ggj" firstAttribute="top" secondItem="qEs-Aw-ru7" secondAttribute="bottom" constant="72" id="YxM-Y0-obR"/>
                             <constraint firstItem="3Xf-G3-5zD" firstAttribute="centerX" secondItem="oMa-NN-d91" secondAttribute="centerX" id="e69-Y8-Pms"/>
-                            <constraint firstItem="MtQ-ah-vZP" firstAttribute="top" secondItem="seg-NS-Pms" secondAttribute="top" constant="40" id="tAH-aW-BT6"/>
+                            <constraint firstItem="fHY-Pc-ggj" firstAttribute="centerX" secondItem="oMa-NN-d91" secondAttribute="centerX" id="qR2-Le-65q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JL5-Vz-QMT"/>
@@ -144,6 +144,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qks-DJ-qKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="9MP-rq-fr1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1446.7289719626167" y="72.570194384449252"/>
         </scene>

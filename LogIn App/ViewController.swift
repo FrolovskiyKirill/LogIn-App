@@ -26,20 +26,31 @@ class ViewController: UIViewController {
         showAlert(title: "Ooops", message: "Your User name is Alex")
     }
     @IBAction func showPassword() {
-        showAlert(title: "Ooops", message: "Your User password is 123")
+        showAlert(title: "Ooops", message: "Your User password is password")
     }
     
     @IBAction func logInPressed() {
+        if userTextField.text == "Alex" && passwordTextField.text == "password" {
+            performSegue(withIdentifier: "firstSegue", sender: nil)
+        } else {
+            showAlert(title: "Ooops", message: "Try again!")
+        }
     }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
 }
 
 // MARK: - Private Methods
 extension ViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) //{ _ in
-            //self.textField.text = ""
-        //}
+        let okAction = UIAlertAction(title: "OK", style: .default) {
+            _ in self.passwordTextField.text = ""
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }

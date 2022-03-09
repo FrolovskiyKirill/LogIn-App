@@ -16,9 +16,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         guard let userLabel = self.userLabel else { return }
-        greetingLabel.text = "Hello, \(userLabel)"
-
-        // Do any additional setup after loading the view.
+        greetingLabel.text = "Hello, \(userLabel)!"
     }
 
     @IBAction func logOutButton() {
