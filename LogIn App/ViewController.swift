@@ -12,24 +12,27 @@ class ViewController: UIViewController {
     @IBOutlet var userTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    var userName = "Alex"
+    var password = "password"
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.userLabel = userTextField.text
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     @IBAction func showUser() {
-        showAlert(title: "Ooops", message: "Your User name is Alex")
+        showAlert(title: "Ooops", message: "Your User name is \(userName)")
     }
     @IBAction func showPassword() {
-        showAlert(title: "Ooops", message: "Your User password is password")
+        showAlert(title: "Ooops", message: "Your User password is \(password)")
     }
     
     @IBAction func logInPressed() {
-        if userTextField.text == "Alex" && passwordTextField.text == "password" {
+        if userTextField.text == userName && passwordTextField.text == password {
             performSegue(withIdentifier: "firstSegue", sender: nil)
         } else {
             showAlert(title: "Ooops", message: "Try again!")
@@ -46,8 +49,8 @@ class ViewController: UIViewController {
 extension ViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) {
-            _ in self.passwordTextField.text = ""
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTextField.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
