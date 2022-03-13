@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="941" y="-153"/>
         </scene>
-        <!--Item-->
+        <!--Welcome-->
         <scene sceneID="TV5-d1-Uyc">
             <objects>
                 <viewController id="Ge3-th-SxG" customClass="WelcomeViewController" customModule="LogIn_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                             <constraint firstItem="fHY-Pc-ggj" firstAttribute="centerX" secondItem="oMa-NN-d91" secondAttribute="centerX" id="qR2-Le-65q"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="51W-22-7Y8"/>
+                    <tabBarItem key="tabBarItem" title="Welcome" image="star.fill" catalog="system" id="51W-22-7Y8"/>
                     <navigationItem key="navigationItem" id="JL5-Vz-QMT"/>
                     <connections>
                         <outlet property="greetingLabel" destination="qEs-Aw-ru7" id="Bqb-zI-AEw"/>
@@ -149,21 +149,28 @@
         <!--About me-->
         <scene sceneID="5TB-TO-77l">
             <objects>
-                <viewController id="QkX-s0-kuj" sceneMemberID="viewController">
+                <viewController id="QkX-s0-kuj" customClass="AboutMeViewController" customModule="LogIn_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xyR-e4-IOO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMp-IY-f4P">
-                                <rect key="frame" x="186" y="234" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMp-IY-f4P">
+                                <rect key="frame" x="20" y="430" width="374" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="ood-iB-abJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2T6-CZ-hsS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EMp-IY-f4P" firstAttribute="leading" secondItem="2T6-CZ-hsS" secondAttribute="leading" constant="20" id="Brd-qz-iiF"/>
+                            <constraint firstItem="EMp-IY-f4P" firstAttribute="centerY" secondItem="xyR-e4-IOO" secondAttribute="centerY" id="I4d-d7-70d"/>
+                            <constraint firstItem="2T6-CZ-hsS" firstAttribute="trailing" secondItem="EMp-IY-f4P" secondAttribute="trailing" constant="20" id="W3s-i2-FD9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About me" id="krr-9L-FDl">
                         <barButtonItem key="rightBarButtonItem" title="More info" id="Ehz-yx-H1N">
@@ -172,26 +179,43 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="aboutMe" destination="EMp-IY-f4P" id="tcF-iw-5uF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUj-iF-foA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2509" y="1342"/>
+            <point key="canvasLocation" x="941" y="2065"/>
         </scene>
-        <!--View Controller-->
+        <!--More Info View Controller-->
         <scene sceneID="AxS-JN-cba">
             <objects>
-                <viewController id="bra-sM-ibs" sceneMemberID="viewController">
+                <viewController id="bra-sM-ibs" customClass="MoreInfoViewController" customModule="LogIn_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tH1-Tl-m9e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6864" translatesAutoresizingMaskIntoConstraints="NO" id="JFC-bh-7Ze">
+                                <rect key="frame" x="20" y="152" width="374" height="592"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="vKE-kC-E6a"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qJ6-ob-rRk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JFC-bh-7Ze" firstAttribute="top" secondItem="qJ6-ob-rRk" secondAttribute="top" constant="64" id="2H6-6t-dBk"/>
+                            <constraint firstItem="JFC-bh-7Ze" firstAttribute="leading" secondItem="qJ6-ob-rRk" secondAttribute="leading" constant="20" id="HBq-dP-rCp"/>
+                            <constraint firstItem="JFC-bh-7Ze" firstAttribute="centerY" secondItem="tH1-Tl-m9e" secondAttribute="centerY" id="RNo-Lr-0hs"/>
+                            <constraint firstItem="qJ6-ob-rRk" firstAttribute="trailing" secondItem="JFC-bh-7Ze" secondAttribute="trailing" constant="20" id="woa-7o-72f"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0sq-G5-Vgf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Sz-qd-2SH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2509" y="2065"/>
+            <point key="canvasLocation" x="1736" y="2065"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fhQ-kG-6EX">
@@ -199,6 +223,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="m9y-3e-paM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dif-95-5rq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -211,11 +236,11 @@
             </objects>
             <point key="canvasLocation" x="939.375" y="542.95774647887322"/>
         </scene>
-        <!--Item-->
+        <!--About-->
         <scene sceneID="kgJ-e2-eNS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rba-qi-5F4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ICt-uZ-00b"/>
+                    <tabBarItem key="tabBarItem" title="About" image="photo.artframe" catalog="system" id="ICt-uZ-00b"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KcR-Mq-uEH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -235,6 +260,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IMG_6864" width="3024" height="4032"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

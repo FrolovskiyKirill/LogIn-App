@@ -15,6 +15,8 @@
 		EDEC646F27D8BD6300ACA72F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEC646D27D8BD6300ACA72F /* LaunchScreen.storyboard */; };
 		EDEC647727D8C4F900ACA72F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEC647627D8C4F900ACA72F /* WelcomeViewController.swift */; };
 		EDEC64AE27DCE7E700ACA72F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEC64AD27DCE7E700ACA72F /* Model.swift */; };
+		EDEC64B227DCF5BC00ACA72F /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEC64B127DCF5BC00ACA72F /* AboutMeViewController.swift */; };
+		EDEC64B427DCF60600ACA72F /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEC64B327DCF60600ACA72F /* MoreInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EDEC647027D8BD6300ACA72F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDEC647627D8C4F900ACA72F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EDEC64AD27DCE7E700ACA72F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EDEC64B127DCF5BC00ACA72F /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		EDEC64B327DCF60600ACA72F /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			children = (
 				EDEC646627D8BD6200ACA72F /* LoginViewController.swift */,
 				EDEC647627D8C4F900ACA72F /* WelcomeViewController.swift */,
+				EDEC64B127DCF5BC00ACA72F /* AboutMeViewController.swift */,
+				EDEC64B327DCF60600ACA72F /* MoreInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -187,7 +193,9 @@
 				EDEC64AE27DCE7E700ACA72F /* Model.swift in Sources */,
 				EDEC646727D8BD6200ACA72F /* LoginViewController.swift in Sources */,
 				EDEC647727D8C4F900ACA72F /* WelcomeViewController.swift in Sources */,
+				EDEC64B427DCF60600ACA72F /* MoreInfoViewController.swift in Sources */,
 				EDEC646327D8BD6200ACA72F /* AppDelegate.swift in Sources */,
+				EDEC64B227DCF5BC00ACA72F /* AboutMeViewController.swift in Sources */,
 				EDEC646527D8BD6200ACA72F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

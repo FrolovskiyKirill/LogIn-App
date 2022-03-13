@@ -9,30 +9,50 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    // MARK: - IB Outlets
     @IBOutlet var userTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    var userName = "Alex"
-    var password = "password"
+    // MARK: - Private Properties
+    private let user = User.userData()
+    private let person = Person.aboutMe()
     
+    
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userLabel = userTextField.text
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        print("1")
+        guard let tabBar = tabBarController.viewControllers else { return }
+        
+        for viewController in tabBar {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.userLabel = person.name + " " + person.surname
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
+                aboutUserVC.userName = person.name
+                aboutUserVC.userSurname = person.surname
+                aboutUserVC.userAge = person.age
+                aboutUserVC.userJob = person.job
+                aboutUserVC.userHobby = person.hobby
+
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
+    // MARK: - IB Actions
     @IBAction func showUser() {
-        showAlert(title: "Ooops", message: "Your User name is \(userName)")
+        showAlert(title: "Ooops", message: "Your User name is \(user.userName)")
     }
     @IBAction func showPassword() {
-        showAlert(title: "Ooops", message: "Your User password is \(password)")
+        showAlert(title: "Ooops", message: "Your User password is \(user.password)")
     }
     
     @IBAction func logInPressed() {
-        if userTextField.text == userName && passwordTextField.text == password {
+        if userTextField.text == user.userName && passwordTextField.text == user.password {
             performSegue(withIdentifier: "firstSegue", sender: nil)
         } else {
             showAlert(title: "Ooops", message: "Try again!")
